@@ -1,0 +1,10 @@
+/**
+ * Photo wallpaper surface treatment, injected as one `<style data-plugin-css>`
+ * tag by the browser plugin. The photo is applied to `body` by the runtime as
+ * an inline background-image; these rules size it and make the alias surfaces
+ * translucent so the photo shows through them. Text tokens are left untouched,
+ * so contrast stays token-driven (the same treatment the shell stylesheet
+ * applied before this feature was extracted into its own plugin).
+ */
+export declare const WALLPAPER_SURFACE_CSS = "body {\n  background-size: cover;\n  background-position: center;\n  background-attachment: fixed;\n  background-repeat: no-repeat;\n  /* light-palette translucent surfaces (high transparency \u2014 the photo shows\n     through; only popover/dialog overlays stay nearly opaque for readability) */\n  --dsw-alias-bg-base: rgba(255, 255, 255, 0.08);\n  --dsw-alias-bg-layer-1: rgba(255, 255, 255, 0.15);\n  --dsw-alias-bg-layer-2: rgba(255, 255, 255, 0.12);\n  --dsw-alias-bg-layer-3: rgba(255, 255, 255, 0.1);\n  --dsw-alias-bg-overlay: rgba(255, 255, 255, 0.85);\n  --dsw-specific-sidebar-fill: rgba(255, 255, 255, 0.1);\n  --dsw-specific-bubble: rgba(255, 255, 255, 0.18);\n  --dsw-specific-bubble-highlight: rgba(255, 255, 255, 0.14);\n  --dsw-specific-input-major: rgba(255, 255, 255, 0.15);\n  --dsw-alias-markdown-code-block: rgba(255, 255, 255, 0.22);\n}\n\nbody[data-ds-dark-theme] {\n  /* dark-palette translucent surfaces */\n  --dsw-alias-bg-base: rgba(15, 17, 21, 0.12);\n  --dsw-alias-bg-layer-1: rgba(27, 27, 28, 0.18);\n  --dsw-alias-bg-layer-2: rgba(35, 35, 36, 0.15);\n  --dsw-alias-bg-layer-3: rgba(44, 44, 46, 0.13);\n  --dsw-alias-bg-overlay: rgba(27, 27, 28, 0.88);\n  --dsw-specific-sidebar-fill: rgba(27, 27, 28, 0.12);\n  --dsw-specific-bubble: rgba(27, 27, 28, 0.2);\n  --dsw-specific-bubble-highlight: rgba(44, 44, 46, 0.16);\n  --dsw-specific-input-major: rgba(35, 35, 36, 0.18);\n  --dsw-alias-markdown-code-block: rgba(21, 21, 23, 0.25);\n}";
+//# sourceMappingURL=wallpaper-css.d.ts.map
