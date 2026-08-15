@@ -1,14 +1,13 @@
 ﻿{
     "name":  "@joeytisaly/dsh-client-ui-wallpaper",
     "description":  "Wallpaper plugin for DeepSeek Harness web: a photo behind the web surface, set from General settings (Host /wallpaper route + browser apply over the --dsw-* token stylesheets)",
-    "version":  "0.1.0-rc.6",
+    "version":  "0.1.0-rc.7",
     "publishConfig":  {
                           "access":  "public"
                       },
     "repository":  {
                        "type":  "git",
-                       "url":  "git+https://github.com/Joeytisaly/dsh-client-ui-wallpaper.git",
-                       "directory":  "packages/client/ui-wallpaper"
+                       "url":  "git+https://github.com/Joeytisaly/dsh-client-ui-wallpaper.git"
                    },
     "type":  "module",
     "main":  "lib/index.js",
