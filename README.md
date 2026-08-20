@@ -42,6 +42,10 @@ Clone this repository, add it as a workspace package (e.g. under `packages/clien
 
 **Settings → General → Wallpaper**: `选择照片` uploads any image (≤ 15 MB, JPEG/PNG/WebP/GIF) and applies it immediately; `移除` restores the plain translucent theme. The flag persists in `$DSH_HOME/settings.yaml` under `ui-wallpaper.enabled` and the photo at `$DSH_HOME/wallpaper`, so both survive restarts. A dark photo pairs best with the dark palette.
 
+## Compatibility note
+
+The settings row's writability depends on whether the host's api-proxy exposes the `ui-wallpaper` settings namespace (its `WEB_SETTINGS_NAMESPACES` allowlist). The wallpaper itself — the `/wallpaper` route, upload/remove, and the durable `enabled` flag read — works on any host; the **settings row stays disabled** on hosts whose `dsh-host-apiproxy` has not added `ui-wallpaper` to the allowlist. Until a release containing that allowlist change, adjust `$DSH_HOME/settings.yaml` directly (e.g. `ui-wallpaper: { enabled: true }`).
+
 ## Known Limitations and Deferred Work
 
 - **Photo readability is scheme-dependent** — a dark photo reads best in the dark palette (light text over dark surfaces); the translucent surfaces it injects are tuned for that pairing. A light-mode readability treatment (frosted glass, per-surface scrims) is deferred.

@@ -42,6 +42,10 @@ npm i @joeytisaly/dsh-client-ui-wallpaper
 
 **设置 → 通用 → 壁纸**：「选择照片」上传任意图片（≤ 15 MB，JPEG/PNG/WebP/GIF）并立即生效；「移除」恢复纯色半透明主题。开关持久化在 `$DSH_HOME/settings.yaml` 的 `ui-wallpaper.enabled`，照片在 `$DSH_HOME/wallpaper`，二者重启后都保留。深色照片配深色配色效果最佳。
 
+## 兼容性警告
+
+设置行的可写性取决于宿主的 api-proxy 是否暴露 `ui-wallpaper` 设置命名空间（其 `WEB_SETTINGS_NAMESPACES` 白名单）。**壁纸本身**（`/wallpaper` 路由、上传/移除、`enabled` 开关的持久化读取）在任何宿主上都可用；**设置行**在 `dsh-host-apiproxy` 尚未把 `ui-wallpaper` 加入白名单的宿主上会保持禁用。在含白名单改动的新版发布前，可直接改 `$DSH_HOME/settings.yaml`（如 `ui-wallpaper: { enabled: true }`）。
+
 ## 已知限制与待办
 
 - **照片可读性依赖配色**——深色照片配深色配色（浅色文字 + 深色表面）效果最佳，插件注入的半透明表面按该搭配调校；浅色模式的可读性方案（毛玻璃、分区遮罩）待做。
