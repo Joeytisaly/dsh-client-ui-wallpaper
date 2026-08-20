@@ -1,4 +1,4 @@
-﻿{
+{
     "name":  "@joeytisaly/dsh-client-ui-wallpaper",
     "description":  "Wallpaper plugin for DeepSeek Harness web: a photo behind the web surface, set from General settings (Host /wallpaper route + browser apply over the --dsw-* token stylesheets)",
     "version":  "0.1.0-rc.7",
@@ -66,7 +66,9 @@
               ],
     "scripts":  {
                     "bundle":  "tsdown",
-                    "watch":  "tsdown --watch"
+                    "watch":  "tsdown --watch",
+                    "build":  "tsc -b && tsdown",
+                    "prepublishOnly":  "npm run build"
                 },
     "dependencies":  {
                          "@deepseek-ai/dsh-settings":  "^0.1.0-rc.6",
@@ -83,7 +85,11 @@
                             "@deepseek-ai/dsh-client-ui-slots":  "^0.1.0-rc.6",
                             "@deepseek-ai/dsh-host-webserver":  "^0.1.0-rc.6",
                             "@deepseek-ai/dsh-invariants":  "^0.1.0-rc.6",
+                            "@types/node":  "^22.0.0",
                             "@types/react":  "~18.3.1",
-                            "react":  "^18.2.0"
+                            "lightningcss":  "^1.32.0",
+                            "react":  "^18.2.0",
+                            "tsdown":  "^0.22.2",
+                            "typescript":  "^6.0.3"
                         }
 }

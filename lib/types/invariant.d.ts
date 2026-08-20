@@ -1,6 +1,6 @@
 /**
- * Package-owned invariant companion for `@deepseek-ai/dsh-client-ui-wallpaper`.
- * @module @deepseek-ai/dsh-client-ui-wallpaper/invariant
+ * Package-owned invariant companion for `@joeytisaly/dsh-client-ui-wallpaper`.
+ * @module @joeytisaly/dsh-client-ui-wallpaper/invariant
  */
 import type { Context } from '@deepseek-ai/cordis';
 /** Cordis companion plugin name. */

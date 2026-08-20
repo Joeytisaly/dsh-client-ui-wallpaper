@@ -58,7 +58,7 @@ const STYLE_ID = 'dsh-ui-wallpaper:surface'
 function ensureWallpaperStyles(): void {
   if (document.querySelector(`style[data-plugin-css="${STYLE_ID}"]`) !== null) return
   const tag = document.createElement('style')
-  tag.dataset.plugin = '@deepseek-ai/dsh-client-ui-wallpaper'
+  tag.dataset.plugin = '@joeytisaly/dsh-client-ui-wallpaper'
   tag.dataset.pluginCss = STYLE_ID
   tag.textContent = WALLPAPER_SURFACE_CSS
   document.head.appendChild(tag)
